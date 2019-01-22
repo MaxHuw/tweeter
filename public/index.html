@@ -24,6 +24,19 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+     <!-- Composer Chacter Counter JS -->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("DOM is ready.");
+        $('.new-tweet form textarea').keyup(function(){
+          console.log(this.value.length + 1);
+          $(this).siblings('.counter').text(140 - (this.value.length));
+        });
+      });
+    </script>
   </head>
 
   <body>
