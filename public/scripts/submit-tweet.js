@@ -6,15 +6,31 @@ $(document).ready(function(){
 
     event.preventDefault();
 
-    $.ajax({
-      type: 'POST',
-      url: '/tweets',
-      data: $(this).serialize()
+    console.log(Number(($(this).children('span').text())));
 
-    }).done(function(){
-      console.log('Tweet Sent');
-    })
+    if (Number(($(this).children('span').text())) >= 0 && Number(($(this).children('span').text())) < 140 ){
+
+     $.ajax({
+        type: 'POST',
+        url: '/tweets',
+        data: $(this).serialize()
+
+      }).done(function(){
+        console.log('Tweet Sent');
+      })
+
+    } else if (Number(($(this).children('span').text())) === 140) {
+
+      alert("You tweet is empty! Try saying something.");
+
+    } else {
+
+      alert("You tweet is empty! Try saying something.");
+
+    }
+
 
   })
 
 });
+
