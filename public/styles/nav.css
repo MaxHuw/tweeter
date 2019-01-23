@@ -23,3 +23,31 @@
   line-height: 80px;
 }
 
+#nav-bar button {
+  position: absolute;
+  right: 3em;
+  top: 1em;
+  height: 3.5em;
+  width: 7em;
+  background: white;
+  color: #00a087;
+  border-radius: 0.5em;
+}
+
+#nav-bar button img {
+  vertical-align: 0%;
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+#nav-bar button .compose-text {
+  vertical-align: 15%;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+
+}
+

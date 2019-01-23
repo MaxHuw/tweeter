@@ -92,7 +92,7 @@
           <h3>${data.user.handle}</h3>
         </header>
 
-        <div>${data.content.text}</div>
+        <div>${escape(data.content.text)}</div>
 
         <footer>
           <h2>${(date).toString().slice(0, 15)}</h2>
@@ -106,6 +106,12 @@
 
     return $tweetMarkup;
 
+  }
+
+  function escape(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
   }
 
 $(document).ready(function(){
