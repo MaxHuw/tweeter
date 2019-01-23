@@ -56,6 +56,18 @@ $(document).ready(function(){
   ];
 
 
+  function loadTweets(){
+
+    $.ajax({
+      type: 'GET',
+      url: '/tweets',
+      dataType: 'json',
+      success: function(data) {
+        renderTweets(data);
+      }
+    })
+  }
+
   function renderTweets(tweetDb){
 
     for (let tweet of tweetDb){
@@ -92,7 +104,7 @@ $(document).ready(function(){
 
   }
 
-  renderTweets(data);
+loadTweets();
 
 });
 
