@@ -65,28 +65,30 @@ $(document).ready(function(){
 
   function createTweetElement(data){
 
-  let $tweetMarkup =  `
+    let date = new Date(data.created_at);
 
-    <article class="tweet">
-      <header>
-        <img src=${data.user.avatars.small}>
-        <h2>${data.user.name}</h2>
-        <h3>${data.user.handle}</h3>
-      </header>
+    let $tweetMarkup =  `
 
-      <div>${data.content.text}</div>
+      <article class="tweet">
+        <header>
+          <img src=${data.user.avatars.small}>
+          <h2>${data.user.name}</h2>
+          <h3>${data.user.handle}</h3>
+        </header>
 
-      <footer>
-        <h2>${data.created_at}</h2>
-        <img class="flag" src="images/baseline_flag_black_18dp.png">
-        <img class="share"src="images/baseline_repeat_black_18dp.png">
-        <img class="favorite"src="images/baseline_favorite_black_18dp.png">
-      </footer>
+        <div>${data.content.text}</div>
 
-    </article>
-  `;
+        <footer>
+          <h2>${(date).toString().slice(0, 15)}</h2>
+          <img class="flag" src="images/baseline_flag_black_18dp.png">
+          <img class="share"src="images/baseline_repeat_black_18dp.png">
+          <img class="favorite"src="images/baseline_favorite_black_18dp.png">
+        </footer>
 
-  return $tweetMarkup;
+      </article>
+    `;
+
+    return $tweetMarkup;
 
   }
 
