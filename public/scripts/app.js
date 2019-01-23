@@ -4,7 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function(){
+
+
+
 
   console.log("Running app.js");
 
@@ -63,6 +65,7 @@ $(document).ready(function(){
       url: '/tweets',
       dataType: 'json',
       success: function(data) {
+        $('.tweet-container').empty();
         renderTweets(data);
       }
     })
@@ -71,8 +74,9 @@ $(document).ready(function(){
   function renderTweets(tweetDb){
 
     for (let tweet of tweetDb){
-      $('.tweet-container').append(createTweetElement(tweet));
+      $('.tweet-container').prepend(createTweetElement(tweet));
     }
+
   }
 
   function createTweetElement(data){
@@ -104,33 +108,9 @@ $(document).ready(function(){
 
   }
 
+$(document).ready(function(){
+
 loadTweets();
 
 });
 
-
-
-
-
-//     let $tweet = $("<article>").addClass("tweet");
-
-//     let $header = $("<header>");
-//     let $imageHeader = $("<img>");
-//     let $hTwoHeader = $("<h2>");
-//     let $hThreeHeader = $("<h3>");
-
-//     let $div = $("<div>");
-
-//     let $footer = $("<footer>");
-//     let $hTwoFooter = $("<h2>");
-//     let $imageFooterFlag = $("<img>").addClass("flag");
-//     let $imageFooterShare = $("<img>").addClass("share");
-//     let $imageFooterFavorite = $("<img>").addClass("favorite");
-
-//     $header.append($imageHeader, $hTwoHeader, $hThreeHeader);
-//     $footer.append($hTwoFooter, $imageFooterFlag, $imageFooterShare, $imageFooterFavorite);
-
-//     return $tweet.append($header, $div, $footer);
-
-//   }
-// }

@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   var $button = $('.new-tweet form');
 
-  $button.on('submit', function () {
+  $button.on('submit', function (event) {
 
     event.preventDefault();
 
@@ -16,6 +16,9 @@ $(document).ready(function(){
         data: $(this).serialize()
 
       }).done(function(){
+        loadTweets();
+        $button[0].reset();
+        $('.new-tweet form .counter').text(140);
         console.log('Tweet Sent');
       })
 
@@ -28,7 +31,6 @@ $(document).ready(function(){
       alert("You tweet is empty! Try saying something.");
 
     }
-
 
   })
 
