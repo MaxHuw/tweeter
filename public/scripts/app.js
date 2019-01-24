@@ -34,7 +34,25 @@ function renderTweets(tweetDb){
   }
 }
 
+function timeSinceTweet (time){
+
+  let todayDate = new Date();
+  let timeDifference = todayDate.getTime() - time;
+
+  if (timeDifference < 3600000) {
+    return Math.floor(timeDifference / (1000 * 60)) + " minutes ago.";
+  } else if (timeDifference >= 3600000 && timeDifference < 86400000) {
+    return Math.floor(timeDifference / (1000 * 60 * 60)) + " hours ago.";
+  } else if (timeDifference >= 86400000 && timeDifference < 31536000000) {
+    return Math.floor(timeDifference / (1000 * 60 * 60 * 24)) + " days ago.";
+  } else if (timeDifference >= 31536000000) {
+    return Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 365)) + " years ago.";
+  }
+}
+
 function createTweetElement(data){
+
+  const tweetedDaysAgo = timeSinceTweet(data.created_at) ;
 
   const date = new Date(data.created_at);
 
@@ -49,7 +67,7 @@ function createTweetElement(data){
       <div>${escape(data.content.text)}</div>
 
       <footer>
-        <h2>${(date).toString().slice(0, 15)}</h2>
+        <h2>${tweetedDaysAgo}, ${data.created_at}</h2>
         <img class="flag" src="images/baseline_flag_black_18dp.png">
         <img class="share"src="images/baseline_repeat_black_18dp.png">
         <img class="favorite"src="images/baseline_favorite_black_18dp.png">
