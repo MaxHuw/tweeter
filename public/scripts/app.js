@@ -62,18 +62,24 @@ function loadTweets(){
     url: '/tweets',
     dataType: 'json',
     success: function(data) {
-      $('.tweet-container').empty();
       renderTweets(data);
     }
   })
 }
 
+
+let tweetsLoaded = false;
+
 function renderTweets(tweetDb){
 
-  for (let tweet of tweetDb){
-    $('.tweet-container').prepend(createTweetElement(tweet));
+  if (!tweetsLoaded) {
+    for (let tweet of tweetDb){
+      $('.tweet-container').prepend(createTweetElement(tweet));
+      tweetsLoaded = true;
+    }
+  } else {
+    $('.tweet-container').prepend(createTweetElement(tweetDb[tweetDb.length-1]));
   }
-
 }
 
 function createTweetElement(data){
@@ -113,8 +119,6 @@ function escape(str) {
   return div.innerHTML;
 }
 
-
-
 $(document).ready(function(){
 
 
@@ -130,4 +134,7 @@ $(document).ready(function(){
   loadTweets();
 
 });
+
+
+
 
