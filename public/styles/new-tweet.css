@@ -5,6 +5,7 @@
   padding: 0.5em;
   background-color: #eee;
   border-radius: 0.5em;
+  display: none;
 }
 
 .new-tweet form {
@@ -47,6 +48,7 @@
   display: inline-block;
   bottom: 0px;
 }
+
 .over-count{
   color: red;
 }
