@@ -16,7 +16,6 @@ $(document).ready(function(){
         type: 'POST',
         url: '/tweets',
         data: $(this).serialize()
-
       }).done(function(){
         loadTweets();
         $button[0].reset();
@@ -31,10 +30,8 @@ $(document).ready(function(){
       //alert("You tweet is empty! Try saying something.");
 
     } else {
-
       $('.error').text("Tweet is too long!");
       //alert("You tweet is empty! Try saying something.");
-
     }
 
   })
