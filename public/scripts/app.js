@@ -84,10 +84,9 @@ function renderTweets(tweetDb){
 
 function createTweetElement(data){
 
-  let date = new Date(data.created_at);
+  const date = new Date(data.created_at);
 
-  let $tweetMarkup =  `
-
+  const $tweetMarkup =  `
     <article class="tweet">
       <header>
         <img src=${data.user.avatars.small}>
@@ -113,19 +112,21 @@ function createTweetElement(data){
 
 function escape(str) {
 
-  var div = document.createElement('div');
+  const div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
 
   return div.innerHTML;
 }
 
-$(document).ready(function(){
+/*************
+On document ready function calls
+*/
 
+$(document).ready(function(){
 
   let $composeButton = $('nav button');
 
   $composeButton.on('click', function () {
-    console.log("Compose pushed");
     $('.new-tweet').slideToggle('fast', function(){
       $('.new-tweet textarea').focus();
     })
