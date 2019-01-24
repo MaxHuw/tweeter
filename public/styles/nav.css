@@ -23,6 +23,11 @@
   line-height: 80px;
 }
 
+#nav-bar button:hover {
+  background:#00d3b2;
+  color: black;
+}
+
 #nav-bar button {
   position: absolute;
   right: 3em;
