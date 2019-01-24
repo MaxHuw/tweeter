@@ -63,6 +63,7 @@
 
 .tweet-container article div {
   padding: 0.5em 0.5em 0.5em 0.5em;
+  word-wrap: break-word;
   width: 100%;
   text-align: center;
 
