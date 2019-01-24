@@ -26,18 +26,27 @@
 }
 
 .new-tweet form .counter {
-  position: absolute;
+  position: relative;
+  display: inline-block;
   bottom: 0px;
   right: 0px;
 }
 
-/*
 .new-tweet form input {
-  position: absolute;
+  position: relative;
+  display: inline-block;
   bottom: 0px;
-  left: 0px;
-}*/
+}
 
+.new-tweet form p {
+  width: 75%;
+  text-align: center;
+  font-weight: bold;
+  color: red;
+  position: relative;
+  display: inline-block;
+  bottom: 0px;
+}
 .over-count{
   color: red;
 }

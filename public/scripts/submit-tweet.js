@@ -8,10 +8,10 @@ $(document).ready(function(){
 
     event.preventDefault();
 
-    console.log(Number(($(this).children('span').text())));
+    console.log(Number($('.counter').text()));
 
-    if (Number(($(this).children('span').text())) >= 0 && Number(($(this).children('span').text())) < 140 ){
-
+    if (Number($('.counter').text()) >= 0 && Number($('.counter').text()) < 140 ){
+      console.log("test console", $(this).serialize());
      $.ajax({
         type: 'POST',
         url: '/tweets',
@@ -20,17 +20,20 @@ $(document).ready(function(){
       }).done(function(){
         loadTweets();
         $button[0].reset();
+        $('.error').text("");
         $('.new-tweet form .counter').text(140);
         console.log('Tweet Sent');
       })
 
-    } else if (Number(($(this).children('span').text())) === 140) {
-
-      alert("You tweet is empty! Try saying something.");
+    } else if (Number($('.counter').text()) === 140) {
+      console.log("test", $('.new-tweet form div .error').length);
+      $('.error').text("Please enter some text.");
+      //alert("You tweet is empty! Try saying something.");
 
     } else {
 
-      alert("You tweet is empty! Try saying something.");
+      $('.error').text("Tweet is too long!");
+      //alert("You tweet is empty! Try saying something.");
 
     }
 

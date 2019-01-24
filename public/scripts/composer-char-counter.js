@@ -4,15 +4,16 @@ $(document).ready(function(){
   console.log("DOM is ready.");
 
   $('.new-tweet form textarea').keyup(function(){
-    $(this).siblings('.counter').text(140 - (this.value.length));
+    $(this).siblings('div').children('.counter').text(140 - (this.value.length));
 
-    if ($(this).siblings('.counter').text() < 0){
-      $(this).siblings('.counter').addClass('over-count');
+    if ($('.counter').text() < 0){
+      $(this).siblings('div').children('.counter').addClass('over-count');
     } else {
-      $(this).siblings('.counter').removeClass('over-count');
+      $(this).siblings('div').children('.counter').removeClass('over-count');
     }
 
   });
 
 });
+
 
