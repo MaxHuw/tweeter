@@ -7,7 +7,6 @@ which turns font-color red. Removes "over-count" class once character count
 is once again less or equal to 140.
 */
 
-
 $(document).ready(function(){
 
   console.log("DOM is ready.");
