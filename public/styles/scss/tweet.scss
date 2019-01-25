@@ -16,7 +16,6 @@ and the CSS for those individual Tweet 'articles'.
 .tweet-container article {
   opacity: 0.5;
   position: relative;
-  max-width: 450px;
   height: 200px;
   margin: 2em 2em 0 2em;
   border: 1px solid grey;
@@ -123,8 +122,6 @@ and the CSS for those individual Tweet 'articles'.
 .tweet-container article:hover footer .favorite {
   opacity: 1;
 }
-
-
 
 
 
