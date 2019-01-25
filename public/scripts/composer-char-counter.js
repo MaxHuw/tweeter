@@ -1,3 +1,12 @@
+/*************
+Changes the character counter text in bottom right of Compose Tweet Form.
+Changes the value based on the number of characters entered into the text area
+(using .keyup), counting down from the max character count (140). When
+negative (over 140 chars), adds class to counter element to "over-count",
+which turns font-color red. Removed "over-count" class once character count
+is once again less or equal to 140.
+*/
+
 
 $(document).ready(function(){
 

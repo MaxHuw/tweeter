@@ -1,3 +1,7 @@
+/**********************
+CSS for the Navigation bar / Header of the Tweeter app.
+*/
+
 #nav-bar {
   z-index: 10;
   height: 80px;

@@ -7,6 +7,17 @@
 
 console.log("Running app.js");
 
+
+/*************
+Name: loadTweets function
+Description: Retrieves tweet data from /tweets and passes the JSON data to
+            the renderTweets() function.
+
+Inputs: Nothing, performs an action when called.
+Outputs: Nothing, is used to call renderTweets() function.
+*/
+
+
 function loadTweets(){
 
   $.ajax({
@@ -19,6 +30,15 @@ function loadTweets(){
   })
 }
 
+/*************
+Name: tweetsLoaded function
+Description: Checks to see if the tweets have been loaded on page load,
+            uploads them all if a fresh page load, otherwise just prepends the
+            newest tweet.
+
+Inputs: An array of tweet objects.
+Outputs: Nothing, just performs the action of prepending tweets to the tweet-container.
+*/
 
 let tweetsLoaded = false;
 
@@ -33,6 +53,14 @@ function renderTweets(tweetDb){
     $('.tweet-container').prepend(createTweetElement(tweetDb[tweetDb.length-1]));
   }
 }
+
+/*************
+Name: timeSinceTweet function
+Description: Makes it so the time since tweet was posted is available.
+Inputs: A time stamp in the format of miliseconds since epoch.
+Outputs: A string with either the number of minutes, hours, days or years since tweet was posted.
+*/
+
 
 function timeSinceTweet (time){
 
@@ -50,9 +78,16 @@ function timeSinceTweet (time){
   }
 }
 
+/*************
+Name: createTweetElement function
+Description: Part of the process to display tweets.
+Inputs: Individual tweet data (JSON object)
+Outputs: HTML markup of of tweet (String literal)
+*/
+
 function createTweetElement(data){
 
-  const tweetedDaysAgo = timeSinceTweet(data.created_at) ;
+  const tweetedTimeAgo = timeSinceTweet(data.created_at) ;
 
   const date = new Date(data.created_at);
 
@@ -67,7 +102,7 @@ function createTweetElement(data){
       <div>${escape(data.content.text)}</div>
 
       <footer>
-        <h2>${tweetedDaysAgo}, ${data.created_at}</h2>
+        <h2>${tweetedTimeAgo}, ${data.created_at}</h2>
         <img class="flag" src="images/baseline_flag_black_18dp.png">
         <img class="share"src="images/baseline_repeat_black_18dp.png">
         <img class="favorite"src="images/baseline_favorite_black_18dp.png">
@@ -80,6 +115,16 @@ function createTweetElement(data){
 
 }
 
+/*************
+Name: escape function
+Description: Makes sure no malicious code is passed through the
+            tweet text.
+
+Inputs: A string.
+Outputs: A DOMString containing the HTML serialization of the
+        element's descendants.
+*/
+
 function escape(str) {
 
   const div = document.createElement('div');
@@ -89,12 +134,21 @@ function escape(str) {
 }
 
 /*************
-On document ready function calls
+Document Ready, will only execute contained code once whole
+site has been loaded first.
 */
 
 $(document).ready(function(){
 
-  let $composeButton = $('nav button');
+
+/*************
+Compose button in header toggles whether Compose Tweet form
+is visable. Page loads with it hidden, so when user clicks button,
+it slides down, and targets the text field so user can start typing a
+tweet.
+*/
+
+  const $composeButton = $('nav button');
 
   $composeButton.on('click', function () {
     $('.new-tweet').slideToggle('fast', function(){
@@ -102,6 +156,8 @@ $(document).ready(function(){
     })
   })
 
+
+  // Initial load of the tweets on page load.
   loadTweets();
 
 });

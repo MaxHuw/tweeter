@@ -1,5 +1,14 @@
+/*************
+Logic and function calls for handling the submission of a tweet from
+the New Tweet form. When submit button is pushed, checks if character
+count is within limit, and greater than 0. (ie, cannot submit a tweet
+that is empty or over 140 characters.). Displays appropriate error if
+no text is entered, or over character limit.
 
-
+If text qualifies, serializes the data, passes it as a POST to /tweets.
+Once POST is complete, loads the new tweet into the tweet container and
+resets the form fields.
+*/
 $(document).ready(function(){
 
   var $button = $('.new-tweet form');
@@ -7,8 +16,6 @@ $(document).ready(function(){
   $button.on('submit', function (event) {
 
     event.preventDefault();
-
-    console.log(Number($('.counter').text()));
 
     if (Number($('.counter').text()) >= 0 && Number($('.counter').text()) < 140 ){
       console.log("test console", $(this).serialize());
@@ -21,17 +28,13 @@ $(document).ready(function(){
         $button[0].reset();
         $('.error').text("");
         $('.new-tweet form .counter').text(140);
-        console.log('Tweet Sent');
       })
 
     } else if (Number($('.counter').text()) === 140) {
-      console.log("test", $('.new-tweet form div .error').length);
       $('.error').text("Please enter some text.");
-      //alert("You tweet is empty! Try saying something.");
 
     } else {
       $('.error').text("Tweet is too long!");
-      //alert("You tweet is empty! Try saying something.");
     }
 
   })
