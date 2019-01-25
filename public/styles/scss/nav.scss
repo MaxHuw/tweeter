@@ -10,23 +10,30 @@ CSS for the Navigation bar / Header of the Tweeter app.
   width: 100%;
   background: $primary-color;
   position: fixed;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
   top: 0;
   padding: 0em 2em 0em 2em;
   color: #e8fdff;
 
-  .logo {
-    width: 80px;
-    height: 80px;
-    float: left;
-    margin-left: 10px;
+  div {
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      width: 80px;
+      height: 80px;
+    }
+
+    .header {
+      margin-left: 10px;
+      font-size: 2em;
+      line-height: 80px;
+    }
   }
 
-  .header {
-    float: left;
-    margin-left: 10px;
-    font-size: 2em;
-    line-height: 80px;
-  }
+
 
   button:hover {
     background:#00d3b2;
@@ -34,29 +41,35 @@ CSS for the Navigation bar / Header of the Tweeter app.
   }
 
   button {
-    position: absolute;
-    right: 3em;
-    top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 3.5em;
     width: 7em;
     background: white;
     color: #00a087;
     border-radius: 0.5em;
 
-    img {
-      vertical-align: 0%;
-      position: relative;
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-    }
+    div {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
 
-    .compose-text {
-      vertical-align: 15%;
-      position: relative;
-      display: inline-block;
-      text-align: center;
-      font-weight: bold;
+      img {
+        vertical-align: 0%;
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+      }
+
+      .compose-text {
+        vertical-align: 15%;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        font-weight: bold;
+      }
     }
   }
 }

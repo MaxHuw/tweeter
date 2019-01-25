@@ -93,19 +93,23 @@ function createTweetElement(data){
 
   const $tweetMarkup =  `
     <article class="tweet">
-      <header>
-        <img src=${data.user.avatars.small}>
-        <h2>${data.user.name}</h2>
+      <header class="tweet-header">
+        <div class="avatar-name">
+          <img src=${data.user.avatars.small}>
+          <h2>${data.user.name}</h2>
+        </div>
         <h3>${data.user.handle}</h3>
       </header>
 
-      <div>${escape(data.content.text)}</div>
+      <div class="tweet-text">${escape(data.content.text)}</div>
 
       <footer>
         <h2>${tweetedTimeAgo}</h2>
-        <img class="flag" src="images/baseline_flag_black_18dp.png">
-        <img class="share"src="images/baseline_repeat_black_18dp.png">
-        <img class="favorite"src="images/baseline_favorite_black_18dp.png">
+        <div class="tweet-icons">
+          <img class="flag" src="images/baseline_flag_black_18dp.png">
+          <img class="share"src="images/baseline_repeat_black_18dp.png">
+          <img class="favorite"src="images/baseline_favorite_black_18dp.png">
+        </div>
       </footer>
 
     </article>
