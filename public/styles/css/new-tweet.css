@@ -12,36 +12,31 @@ CSS for the the Compose Tweet form.
     position: relative;
     width: 100%;
     margin: 0 auto; }
-
-.new-tweet form textarea {
-  min-height: 3em;
-  resize: vertical;
-  width: 100%;
-  padding: 0.25em; }
-
-.new-tweet h2 {
-  margin: 0.25em 0 0.5em 0;
-  border-bottom: 1px solid black; }
-
-.new-tweet form .counter {
-  position: relative;
-  display: inline-block;
-  bottom: 0px;
-  right: 0px; }
-
-.new-tweet form input {
-  position: relative;
-  display: inline-block;
-  bottom: 0px; }
-
-.new-tweet form p {
-  width: 75%;
-  text-align: center;
-  font-weight: bold;
-  color: red;
-  position: relative;
-  display: inline-block;
-  bottom: 0px; }
+    .new-tweet form textarea {
+      min-height: 3em;
+      resize: vertical;
+      width: 100%;
+      padding: 0.25em; }
+    .new-tweet form .counter {
+      position: relative;
+      display: inline-block;
+      bottom: 0px;
+      right: 0px; }
+    .new-tweet form input {
+      position: relative;
+      display: inline-block;
+      bottom: 0px; }
+    .new-tweet form p {
+      width: 75%;
+      text-align: center;
+      font-weight: bold;
+      color: red;
+      position: relative;
+      display: inline-block;
+      bottom: 0px; }
+  .new-tweet h2 {
+    margin: 0.25em 0 0.5em 0;
+    border-bottom: 1px solid black; }
 
 .over-count {
   color: red; }

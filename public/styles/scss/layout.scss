@@ -1,3 +1,4 @@
+@import 'variables';
 
 html {
   box-sizing: border-box;
@@ -12,7 +13,7 @@ html {
 
 body {
   margin: 0;
-  color: #244751;
+  color: $primary-color;
   background-color: #eee;
   font-family: 'Roboto Condensed', sans-serif;
 }
