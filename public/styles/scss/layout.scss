@@ -23,6 +23,8 @@ body {
  */
 
  main {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   width: 450px;
   margin: 0 auto;
