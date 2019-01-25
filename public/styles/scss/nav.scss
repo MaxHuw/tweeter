@@ -1,0 +1,61 @@
+/**********************
+CSS for the Navigation bar / Header of the Tweeter app.
+*/
+
+#nav-bar {
+  z-index: 10;
+  height: 80px;
+  width: 100%;
+  background: #00a087;
+  position: fixed;
+  top: 0;
+  padding: 0em 2em 0em 2em;
+  color: #e8fdff;
+}
+
+#nav-bar .logo {
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin-left: 10px;
+}
+
+#nav-bar .header {
+  float: left;
+  margin-left: 10px;
+  font-size: 2em;
+  line-height: 80px;
+}
+
+#nav-bar button:hover {
+  background:#00d3b2;
+  color: black;
+}
+
+#nav-bar button {
+  position: absolute;
+  right: 3em;
+  top: 1em;
+  height: 3.5em;
+  width: 7em;
+  background: white;
+  color: #00a087;
+  border-radius: 0.5em;
+}
+
+#nav-bar button img {
+  vertical-align: 0%;
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+#nav-bar button .compose-text {
+  vertical-align: 15%;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+
+}

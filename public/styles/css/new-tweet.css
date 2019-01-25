@@ -1,47 +1,38 @@
 /**********************
 CSS for the the Compose Tweet form.
 */
-
-
 .new-tweet {
   max-width: 450px;
   margin: 0 2em 0 2em;
   padding: 0.5em;
   background-color: #eee;
   border-radius: 0.5em;
-  display: none;
-}
-
-.new-tweet form {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-}
+  display: none; }
+  .new-tweet form {
+    position: relative;
+    width: 100%;
+    margin: 0 auto; }
 
 .new-tweet form textarea {
   min-height: 3em;
   resize: vertical;
   width: 100%;
-  padding: 0.25em;
-}
+  padding: 0.25em; }
 
 .new-tweet h2 {
   margin: 0.25em 0 0.5em 0;
-  border-bottom: 1px solid black;
-}
+  border-bottom: 1px solid black; }
 
 .new-tweet form .counter {
   position: relative;
   display: inline-block;
   bottom: 0px;
-  right: 0px;
-}
+  right: 0px; }
 
 .new-tweet form input {
   position: relative;
   display: inline-block;
-  bottom: 0px;
-}
+  bottom: 0px; }
 
 .new-tweet form p {
   width: 75%;
@@ -50,9 +41,7 @@ CSS for the the Compose Tweet form.
   color: red;
   position: relative;
   display: inline-block;
-  bottom: 0px;
-}
+  bottom: 0px; }
 
-.over-count{
-  color: red;
-}
+.over-count {
+  color: red; }
