@@ -13,9 +13,29 @@ Global layout stuff
 
 body {
   margin: 0;
-  color: $primary-color;
+  color: black;
   background-color: #eee;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: $font-stack;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
 }
 
 /****************

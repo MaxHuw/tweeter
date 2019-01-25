@@ -11,22 +11,23 @@ body {
   margin: 0;
   color: black;
   background-color: #eee;
-  font-family: 'Roboto Condensed', sans-serif; }
+  font-family: "Roboto Condensed", sans-serif; }
 
 p {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
+
+h1 {
+  margin: 0;
+  padding: 0; }
 
 h2 {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 h3 {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 /****************
 Additional CSS can be defined below or in other CSS files, as per instructions
