@@ -11,50 +11,56 @@ CSS for the the Compose Tweet form.
   padding: 0.5em;
   background-color: #eee;
   border-radius: 0.5em;
-  display: none;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    align-items: flex-start;
+    flex: 1;
+    margin: 0.25em 0 0.5em 0;
+    border-bottom: 1px solid black;
+  }
 
   form {
-    position: relative;
+    align-items: flex-end;
     width: 100%;
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
 
     textarea {
-      min-height: 3em;
+      min-height: 5em;
       resize: vertical;
       width: 100%;
       padding: 0.25em;
     }
 
-    .counter {
-      position: relative;
-      display: inline-block;
-      bottom: 0px;
-      right: 0px;
-    }
+    div {
+      display: flex;
+      width: 100%;
+      margin-top: 0.25em;
+      justify-content: space-between;
+      align-items: center;
 
-    input {
-      position: relative;
-      display: inline-block;
-      bottom: 0px;
-    }
+      .counter {
+        width: 2em;
+      }
 
-    p {
-      width: 75%;
-      text-align: center;
-      font-weight: bold;
-      color: red;
-      position: relative;
-      display: inline-block;
-      bottom: 0px;
-    }
-  }
+      .over-count{
+        color: red;
+      }
 
-  h2 {
-    margin: 0.25em 0 0.5em 0;
-    border-bottom: 1px solid black;
+      input {
+        width: 5em;
+        height: 2em;
+      }
+
+      .error {
+        text-align: center;
+        font-weight: bold;
+        color: red;
+      }
+    }
   }
 }
 
-.over-count{
-  color: red;
-}

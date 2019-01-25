@@ -102,7 +102,7 @@ function createTweetElement(data){
       <div>${escape(data.content.text)}</div>
 
       <footer>
-        <h2>${tweetedTimeAgo}, ${data.created_at}</h2>
+        <h2>${tweetedTimeAgo}</h2>
         <img class="flag" src="images/baseline_flag_black_18dp.png">
         <img class="share"src="images/baseline_repeat_black_18dp.png">
         <img class="favorite"src="images/baseline_favorite_black_18dp.png">

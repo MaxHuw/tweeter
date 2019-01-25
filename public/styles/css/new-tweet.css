@@ -7,36 +7,38 @@ CSS for the the Compose Tweet form.
   padding: 0.5em;
   background-color: #eee;
   border-radius: 0.5em;
-  display: none; }
+  display: flex;
+  flex-direction: column; }
+  .new-tweet h2 {
+    align-items: flex-start;
+    flex: 1;
+    margin: 0.25em 0 0.5em 0;
+    border-bottom: 1px solid black; }
   .new-tweet form {
-    position: relative;
+    align-items: flex-end;
     width: 100%;
+    display: flex;
+    flex-direction: column;
     margin: 0 auto; }
     .new-tweet form textarea {
-      min-height: 3em;
+      min-height: 5em;
       resize: vertical;
       width: 100%;
       padding: 0.25em; }
-    .new-tweet form .counter {
-      position: relative;
-      display: inline-block;
-      bottom: 0px;
-      right: 0px; }
-    .new-tweet form input {
-      position: relative;
-      display: inline-block;
-      bottom: 0px; }
-    .new-tweet form p {
-      width: 75%;
-      text-align: center;
-      font-weight: bold;
-      color: red;
-      position: relative;
-      display: inline-block;
-      bottom: 0px; }
-  .new-tweet h2 {
-    margin: 0.25em 0 0.5em 0;
-    border-bottom: 1px solid black; }
-
-.over-count {
-  color: red; }
+    .new-tweet form div {
+      display: flex;
+      width: 100%;
+      margin-top: 0.25em;
+      justify-content: space-between;
+      align-items: center; }
+      .new-tweet form div .counter {
+        width: 2em; }
+      .new-tweet form div .over-count {
+        color: red; }
+      .new-tweet form div input {
+        width: 5em;
+        height: 2em; }
+      .new-tweet form div .error {
+        text-align: center;
+        font-weight: bold;
+        color: red; }
