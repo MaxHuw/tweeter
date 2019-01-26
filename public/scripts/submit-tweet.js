@@ -19,7 +19,6 @@ $(document).ready(function(){
     event.preventDefault();
 
     if (Number($('.counter').text()) >= 0 && Number($('.counter').text()) < 140 ){
-      console.log("test console", $(this).serialize());
      $.ajax({
         type: 'POST',
         url: '/tweets',

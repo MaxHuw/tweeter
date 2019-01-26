@@ -27,8 +27,8 @@ function loadTweets(){
     success: function(data) {
       renderTweets(data);
     }
-  })
-}
+  });
+};
 
 /*************
 Name: tweetsLoaded function
@@ -51,8 +51,8 @@ function renderTweets(tweetDb){
     }
   } else {
     $('.tweet-container').prepend(createTweetElement(tweetDb[tweetDb.length-1]));
-  }
-}
+  };
+};
 
 /*************
 Name: timeSinceTweet function
@@ -76,7 +76,7 @@ function timeSinceTweet (time){
   } else if (timeDifference >= 31536000000) {
     return Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 365)) + " years ago.";
   }
-}
+};
 
 /*************
 Name: createTweetElement function
@@ -117,7 +117,7 @@ function createTweetElement(data){
 
   return $tweetMarkup;
 
-}
+};
 
 /*************
 Name: escape function
@@ -135,7 +135,7 @@ function escape(str) {
   div.appendChild(document.createTextNode(str));
 
   return div.innerHTML;
-}
+};
 
 /*************
 Document Ready, will only execute contained code once whole
@@ -157,8 +157,8 @@ tweet.
   $('.compose-button').on('click', function () {
     $('.new-tweet').slideToggle('fast', function(){
       $('.new-tweet textarea').focus();
-    })
-  })
+    });
+  });
 
 
   // Initial load of the tweets on page load.
