@@ -152,9 +152,9 @@ it slides down, and targets the text field so user can start typing a
 tweet.
 */
 
-  const $composeButton = $('nav button');
+  $('.new-tweet').css({display: "none"});
 
-  $composeButton.on('click', function () {
+  $('.compose-button').on('click', function () {
     $('.new-tweet').slideToggle('fast', function(){
       $('.new-tweet textarea').focus();
     })

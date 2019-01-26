@@ -9,6 +9,7 @@ If text qualifies, serializes the data, passes it as a POST to /tweets.
 Once POST is complete, loads the new tweet into the tweet container and
 resets the form fields.
 */
+
 $(document).ready(function(){
 
   var $button = $('.new-tweet form');
