@@ -31,6 +31,3 @@ Tweets must be 140 characters of less.
 
 * Implemented Flex and SASS for the styling.
 * Implemented some responsive design, mostly for desktop and mobile.
-
-
-Testing my git.
